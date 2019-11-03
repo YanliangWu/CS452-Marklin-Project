@@ -1,0 +1,9 @@
+//
+// Created by Yanliang Wu on 2016-07-20.
+//
+
+#ifndef TRAIN_PROJECT_TRAININFO_H
+#define TRAIN_PROJECT_TRAININFO_H
+
+
+#endif //TRAIN_PROJECT_TRAININFO_H

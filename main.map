@@ -1,0 +1,338 @@
+Archive member included because of file (symbol)
+
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+                              bwio.o (__udivsi3)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_divsi3.o)
+                              kernel_swi.o (__divsi3)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+                              bwio.o (__umodsi3)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_modsi3.o)
+                              bwio.o (__modsi3)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+                              /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o) (__div0)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x0000000000218000 0x0000000002000000
+rom              0x0000000060000000 0x0000000000800000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+data            0x0000000000218000       0xb8
+                0x0000000000218000                _DataStart = .
+ *(.data)
+ .data          0x0000000000218000       0x1c initialization.o
+ .data          0x000000000021801c       0x1c uartserver.o
+ .data          0x0000000000218038       0x10 kernel_hwi.o
+ .data          0x0000000000218048       0x1c kernel_swi.o
+ .data          0x0000000000218064       0x1c trainserver.o
+ .data          0x0000000000218080       0x1c clockserver.o
+ .data          0x000000000021809c       0x1c main.o
+                0x00000000002180b8                _DataEnd = .
+
+bss             0x00000000002180b8        0x0
+                0x00000000002180b8                _BssStart = .
+ *(.bss)
+                0x00000000002180b8                _BssEnd = .
+
+text            0x00000000002180b8    0x1832c
+ *(.text)
+ .text          0x00000000002180b8      0x144 string.o
+                0x000000000021812c                stringcmp
+                0x00000000002180b8                stringcpy
+ .text          0x00000000002181fc     0x21f0 bwio.o
+                0x0000000000218ff0                bwputr
+                0x0000000000218970                plputc
+                0x000000000021955c                bwi2a
+                0x0000000000218c78                bwsetfifo
+                0x0000000000218e4c                bwputc
+                0x00000000002181fc                kerputc
+                0x0000000000219a48                plputw
+                0x0000000000218b88                plgetc
+                0x00000000002183d0                kergetc
+                0x0000000000219e24                plprintf
+                0x00000000002192ac                bwa2d
+                0x000000000021a0e0                kerformat
+                0x0000000000219e5c                kerputx
+                0x000000000021994c                plputr
+                0x0000000000218d40                bwsetspeed
+                0x0000000000219f5c                kerputstr
+                0x0000000000218f10                c2x
+                0x0000000000219354                bwa2i
+                0x00000000002191f4                bwgetc
+                0x0000000000218274                bwtroutc
+                0x0000000000219fd8                kerputw
+                0x000000000021846c                kersent
+                0x0000000000218a34                plreceive
+                0x000000000021a3b4                kerprintf
+                0x0000000000219418                bwui2a
+                0x00000000002199cc                plputstr
+                0x00000000002195c0                bwformat
+                0x0000000000218790                plsent
+                0x00000000002190ec                bwputw
+                0x0000000000219894                bwprintf
+                0x0000000000219edc                kerputr
+                0x0000000000218f70                bwputx
+                0x0000000000219b50                plformat
+                0x0000000000219070                bwputstr
+                0x000000000021861c                kerreceive
+                0x00000000002198cc                plputx
+ .text          0x000000000021a3ec      0x3a0 initialization.o
+                0x000000000021a5e8                create_test
+                0x000000000021a3ec                set_channel
+                0x000000000021a718                receiver
+                0x000000000021a668                sender1
+                0x000000000021a540                nameserver_test1
+                0x000000000021a6c0                sender2
+                0x000000000021a530                first_kernel_task
+                0x000000000021a594                nameserver_test2
+ .text          0x000000000021a78c     0x1500 uartserver.o
+                0x000000000021a78c                buffer_init
+                0x000000000021ba50                uart1_output_notifier_boot
+                0x000000000021b9a0                uart1_input_notifier_boot
+                0x000000000021b930                uart_server_initial
+                0x000000000021bbb4                uart2_output_notifier_boot
+                0x000000000021bb00                uart2_input_notifier_boot
+                0x000000000021a7fc                uart_server_boot
+ .text          0x000000000021bc8c      0x814 print.o
+                0x000000000021c34c                print_switch
+                0x000000000021bffc                print_train
+                0x000000000021bc8c                print_intial
+                0x000000000021c270                print_command
+                0x000000000021c0a8                print_time
+                0x000000000021c3f0                print_sensors
+ .text          0x000000000021c4a0      0x1a4 asm.o
+                0x000000000021c624                asm_reply
+                0x000000000021c5f4                asm_mytid
+                0x000000000021c53c                asm_k_exit
+                0x000000000021c4f8                asm_k_hwi
+                0x000000000021c590                asm_k_start
+                0x000000000021c62c                asm_awaitevent
+                0x000000000021c5fc                asm_myparenttid
+                0x000000000021c4c0                asm_k_swi
+                0x000000000021c604                asm_pass
+                0x000000000021c4bc                _TimerIRQStackBase
+                0x000000000021c5ec                asm_create
+                0x000000000021c5dc                asm_boot
+                0x000000000021c614                asm_send
+                0x000000000021c61c                asm_receive
+                0x000000000021c60c                asm_exit
+                0x000000000021c5bc                asm_k_terminate
+                0x000000000021c63c                asm_getIdle
+                0x000000000021c56c                asm_k_boot
+                0x000000000021c634                asm_activeevent
+                0x000000000021c4a0                asm_SetUpIRQStack
+ .text          0x000000000021c644      0x4f0 kernel_hwi.o
+                0x000000000021c840                uart1Handler
+                0x000000000021c7c0                uart2inHandler
+                0x000000000021c6e0                timerHandler
+                0x000000000021c644                hwi_initial
+                0x000000000021ca8c                hwi_handle
+                0x000000000021c740                uart2outHandler
+ .text          0x000000000021cb34      0xebc priority_queue.o
+                0x000000000021cf3c                priority_queue_push
+                0x000000000021ccbc                priority_queue_initial
+                0x000000000021cc08                queue_pop
+                0x000000000021cb70                queue_push
+                0x000000000021cb34                queue_initial
+                0x000000000021d360                priority_queue_pop
+ .text          0x000000000021d9f0      0x584 task.o
+                0x000000000021d9f0                assign_tid
+                0x000000000021df04                TD_exit
+                0x000000000021de84                TD_unblock
+                0x000000000021dc98                TD_save
+                0x000000000021df4c                TD_next
+                0x000000000021daf8                TD_create
+                0x000000000021dd94                TD_block_save
+                0x000000000021da88                TD_initial
+ .text          0x000000000021df74     0x1dd4 kernel_swi.o
+                0x000000000021f8bc                k_Reply
+                0x000000000021e320                k_Boot
+                0x000000000021f224                k_Send
+                0x000000000021e840                k_MyTid
+                0x000000000021e9b4                k_Pass
+                0x000000000021f9dc                k_awaitEvent
+                0x000000000021e6e8                k_Create
+                0x000000000021fc60                k_getIdle
+                0x000000000021f5c8                k_Receive
+                0x000000000021df94                swi_handle
+                0x000000000021fb40                k_activeEvent
+                0x000000000021df74                cache_init
+                0x000000000021ea70                k_Exit
+                0x000000000021ecbc                popMessage
+                0x000000000021e8e4                k_MyParentTid
+                0x000000000021eadc                setMessage
+                0x000000000021e100                exit_kernel
+ .text          0x000000000021fd48      0x200 syscall.o
+                0x000000000021fe20                Send
+                0x000000000021fddc                MyParentTid
+                0x000000000021fdf8                Pass
+                0x000000000021fd94                Create
+                0x000000000021fee4                AwaitEvent
+                0x000000000021fe6c                Receive
+                0x000000000021fea8                Reply
+                0x000000000021fdc0                MyTid
+                0x000000000021fd48                Boot
+                0x000000000021fe0c                Exit
+                0x000000000021ff08                ActiveEvent
+                0x000000000021ff2c                getIdle
+ .text          0x000000000021ff48      0x220 trainserver.o
+                0x00000000002200bc                train_notifier2_boot
+                0x000000000021ff48                train_server_boot
+                0x0000000000220010                train_notifier1_boot
+ .text          0x0000000000220168     0xcdd8 track.o
+                0x0000000000226dc8                track_initb
+                0x0000000000220168                track_getpath
+                0x0000000000220a80                track_inita
+ .text          0x000000000022cf40      0x7d0 nameserver.o
+                0x000000000022d604                EndAs
+                0x000000000022d4f4                WhoIs
+                0x000000000022d180                ns_server_registeras
+                0x000000000022d24c                ns_server_whois
+                0x000000000022d3e4                RegisterAs
+                0x000000000022d0e8                ns_server_initial
+                0x000000000022cf40                ns_server_boot
+                0x000000000022d354                ns_server_exit
+ .text          0x000000000022d710      0xb2c clockserver.o
+                0x000000000022dad8                cl_server_time
+                0x000000000022d918                cl_server_initial
+                0x000000000022dfc0                cl_idle_boot
+                0x000000000022e0f8                DelayUntil
+                0x000000000022de10                cl_client_initial
+                0x000000000022dba0                cl_server_unblock
+                0x000000000022dfd0                Delay
+                0x000000000022db44                cl_server_delay
+                0x000000000022e118                Time
+                0x000000000022d8b8                cl_server_settime
+                0x000000000022d710                cl_server_boot
+                0x000000000022dcd4                cl_client_boot
+                0x000000000022dea4                cl_notifier_boot
+                0x000000000022d9a4                cl_server_notifier
+ .text          0x000000000022e23c      0xf90 rps.o
+                0x000000000022eb0c                rps_server_resultgame
+                0x000000000022e4b8                rps_server_initial
+                0x000000000022e940                rps_server_startgame
+                0x000000000022e86c                rps_server_quit
+                0x000000000022f07c                rps_who_won
+                0x000000000022e5a0                rps_server_signup
+                0x000000000022e60c                rps_server_play
+                0x000000000022e23c                rps_server_boot
+                0x000000000022ea18                rps_server_checkgame
+                0x000000000022ee7c                rps_random_gen
+                0x000000000022ef48                rps_print
+                0x000000000022ede8                rps_client_initial
+                0x000000000022eec8                rps_decision
+                0x000000000022ec04                rps_client_boot
+ .text          0x000000000022f1cc       0xc0 main.o
+                0x000000000022f1cc                main
+ .text          0x000000000022f28c      0x110 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+                0x000000000022f28c                __udivsi3
+                0x000000000022f384                __aeabi_uidivmod
+ .text          0x000000000022f39c      0x140 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_divsi3.o)
+                0x000000000022f39c                __divsi3
+                0x000000000022f4c4                __aeabi_idivmod
+ .text          0x000000000022f4dc       0xcc /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+                0x000000000022f4dc                __umodsi3
+ .text          0x000000000022f5a8       0xe4 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_modsi3.o)
+                0x000000000022f5a8                __modsi3
+ .text          0x000000000022f68c        0x4 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+                0x000000000022f68c                __aeabi_ldiv0
+                0x000000000022f68c                __div0
+                0x000000000022f68c                __aeabi_idiv0
+ *(.got)
+ .got           0x000000000022f690       0x54 initialization.o
+ *(.got.plt)
+ .got.plt       0x000000000022f6e4        0xc initialization.o
+                0x000000000022f6e4                _GLOBAL_OFFSET_TABLE_
+ *(.rodata.str1.4)
+ .rodata.str1.4
+                0x000000000022f6f0       0x2f kernel_hwi.o
+                                         0x30 (size before relaxing)
+ *(.rodata)
+ *fill*         0x000000000022f71f        0x1 00
+ .rodata        0x000000000022f720       0x94 initialization.o
+ .rodata        0x000000000022f7b4       0xd4 uartserver.o
+ .rodata        0x000000000022f888      0x5d0 print.o
+ .rodata        0x000000000022fe58       0x78 kernel_swi.o
+ .rodata        0x000000000022fed0       0x6c trainserver.o
+ .rodata        0x000000000022ff3c      0x2b0 track.o
+ .rodata        0x00000000002301ec       0x4c clockserver.o
+ .rodata        0x0000000000230238      0x164 rps.o
+ .rodata        0x000000000023039c       0x48 main.o
+ *(.glue_7)
+ *(.glue_7t)
+
+.rel.dyn
+LOAD string.o
+LOAD bwio.o
+LOAD initialization.o
+LOAD uartserver.o
+LOAD print.o
+LOAD asm.o
+LOAD kernel_hwi.o
+LOAD priority_queue.o
+LOAD task.o
+LOAD kernel_swi.o
+LOAD syscall.o
+LOAD trainserver.o
+LOAD track.o
+LOAD nameserver.o
+LOAD clockserver.o
+LOAD rps.o
+LOAD main.o
+LOAD /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a
+OUTPUT(main.elf elf32-littlearm)
+
+.comment        0x0000000000000000      0x120
+ .comment       0x0000000000000000       0x12 string.o
+ .comment       0x0000000000000012       0x12 bwio.o
+ .comment       0x0000000000000024       0x12 initialization.o
+ .comment       0x0000000000000036       0x12 uartserver.o
+ .comment       0x0000000000000048       0x12 print.o
+ .comment       0x000000000000005a       0x12 kernel_hwi.o
+ .comment       0x000000000000006c       0x12 priority_queue.o
+ .comment       0x000000000000007e       0x12 task.o
+ .comment       0x0000000000000090       0x12 kernel_swi.o
+ .comment       0x00000000000000a2       0x12 syscall.o
+ .comment       0x00000000000000b4       0x12 trainserver.o
+ .comment       0x00000000000000c6       0x12 track.o
+ .comment       0x00000000000000d8       0x12 nameserver.o
+ .comment       0x00000000000000ea       0x12 clockserver.o
+ .comment       0x00000000000000fc       0x12 rps.o
+ .comment       0x000000000000010e       0x12 main.o
+
+.debug_line     0x0000000000000000      0x256
+ .debug_line    0x0000000000000000       0x86 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000000086       0x92 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_divsi3.o)
+ .debug_line    0x0000000000000118       0x6f /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_line    0x0000000000000187       0x75 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_modsi3.o)
+ .debug_line    0x00000000000001fc       0x5a /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_info     0x0000000000000000      0x235
+ .debug_info    0x0000000000000000       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000000071       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_divsi3.o)
+ .debug_info    0x00000000000000e2       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_info    0x0000000000000153       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_modsi3.o)
+ .debug_info    0x00000000000001c4       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_abbrev   0x0000000000000000       0x64
+ .debug_abbrev  0x0000000000000000       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000000000000014       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x0000000000000028       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x000000000000003c       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_modsi3.o)
+ .debug_abbrev  0x0000000000000050       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_aranges  0x0000000000000000       0xa0
+ .debug_aranges
+                0x0000000000000000       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x0000000000000020       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x0000000000000040       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x0000000000000060       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_modsi3.o)
+ .debug_aranges
+                0x0000000000000080       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export PATH=/u/wbcowan/gnuarm-4.0.2/libexec/gcc/arm-elf/4.0.2:/u/wbcowan/gnuarm-4.0.2/arm-elf/bin:$PATH
+make
+cp main.elf /u/cs452/tftp/ARM/y24qiu/main.elf
+chmod 755 /u/cs452/tftp/ARM/y24qiu/main.elf
+cp asm.s asm.c
+rm *.o
+rm *.s
+cp asm.c asm.s
